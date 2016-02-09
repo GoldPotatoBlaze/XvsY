@@ -17,6 +17,7 @@ use pocketmine\level\Level;
 use pocketmine\item\Item;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\inventory\PlayerInventory;
 class XvsY extends PluginBase implements Listener{
 	public function onEnable(){
 		if(!file_exists($this->getDataFolder())){
