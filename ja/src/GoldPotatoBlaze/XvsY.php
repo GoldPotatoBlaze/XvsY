@@ -17,6 +17,7 @@ use pocketmine\level\Level;
 use pocketmine\item\Item;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\inventory\PlayerInventory;
 class XvsY extends PluginBase implements Listener{
 	public function onEnable(){
 		if(!file_exists($this->getDataFolder())){
@@ -43,7 +44,7 @@ class XvsY extends PluginBase implements Listener{
 		$vsvs = $this;
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
-	public function vsTouch(PlayerInteractEvent $event){
+	public function XvsYTouch(PlayerInteractEvent $event){
 		if($event->getBlock()->getId() == $this->config->get("受付に使用するブロックID")){
 			$vs = explode("vs",$this->config->get("XvsY"));
 			$vs1 = "";
@@ -170,7 +171,7 @@ class XvsY extends PluginBase implements Listener{
 			}
 		}
 	}
-	public function onDamage(EntityDamageEvent $event){
+	public function XvsYDamage(EntityDamageEvent $event){
 		if($event instanceof EntityDamageByEntityEvent){
 			if($this->system["GamesRun"] == "on"){
 				$a = $event->getEntity()->getName();
@@ -197,7 +198,7 @@ class XvsY extends PluginBase implements Listener{
 			}
 		}
 	}
-	public function onPlayerMove(PlayerMoveEvent $event){
+	public function XvsYPlayerMove(PlayerMoveEvent $event){
 		$player = $event->getPlayer();
 		$member = explode(":",$this->system["MenberTima"]);
 		if($this->system["Motion"] == "on"){
@@ -208,7 +209,7 @@ class XvsY extends PluginBase implements Listener{
 			}
 		}
 	}
-	public function onQuit(PlayerQuitEvent $event) {
+	public function XvsYQuit(PlayerQuitEvent $event) {
 		$member = explode(":",$this->system["MenberTima"]);
 		if(strpos($this->system["MenberTima"],":")){
 			$member = explode(":",$this->system["MenberTima"]);
@@ -283,7 +284,7 @@ class XvsY extends PluginBase implements Listener{
 			}
 		}
 	}
-	public function onDeath(PlayerDeathEvent $event){
+	public function XvsYDeath(PlayerDeathEvent $event){
 		$member = explode(":",$this->system["MenberTima"]);
 		if(strpos($this->system["MenberTima"],":")){
 			$member = explode(":",$this->system["MenberTima"]);
