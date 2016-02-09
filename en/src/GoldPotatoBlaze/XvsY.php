@@ -160,7 +160,7 @@ class XvsY extends PluginBase implements Listener{
 							$player1->save();
 						}
 						foreach($player as $player1){
-							$player1->setHealth($this->config->get("MaxPlayerHealth"));
+							$player1->setHealth($this->config->get("PlayerHealth"));
 							$player1->save();
 						}
 					}else{
