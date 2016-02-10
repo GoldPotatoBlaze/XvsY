@@ -256,6 +256,10 @@ class XvsY extends PluginBase implements Listener{
 						$tp = $this->getServer()->getPlayer($tp);
 						if($tp !== null){
 							$tp->teleport($this->getServer()->getDefaultLevel()->getSpawn());
+							if($this->config->get("アイテム、エフェクト消去") == "on"){
+								$tp->removeAllEffects();
+								$tp->getInventory()->clearAll();
+							}
 						}
 					}
 				}
@@ -331,6 +335,10 @@ class XvsY extends PluginBase implements Listener{
 						$tp = $this->getServer()->getPlayer($tp);
 						if($tp !== null){
 							$tp->teleport($this->getServer()->getDefaultLevel()->getSpawn());
+							if($this->config->get("アイテム、エフェクト消去") == "on"){
+								$tp->removeAllEffects();
+								$tp->getInventory()->clearAll();
+							}
 						}
 					}
 				}
