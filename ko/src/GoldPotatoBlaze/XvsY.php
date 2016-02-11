@@ -278,7 +278,7 @@ class XvsY extends PluginBase implements Listener{
 								$this->system["MenberTima"] = $newmember;
 							}else{
 								if($member[0] == $event->getPlayer()->getName()){
-									$newmember = str_replace(":".$event->getPlayer()->getName(),"",$this->system["MenberTima"]);
+									$newmember = str_replace($event->getPlayer()->getName().":","",$this->system["MenberTima"]);
 									$this->system["MenberTima"] = $newmember;
 								}
 							}
