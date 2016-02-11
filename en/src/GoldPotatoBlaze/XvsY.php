@@ -270,7 +270,7 @@ class XvsY extends PluginBase implements Listener{
 				}else{
 					if(strpos($this->system["MenberTima"],":")){
 						if(strpos($this->system["MenberTima"],":".$event->getPlayer()->getName().":")){
-							$newmember = str_replace(":".$event->getPlayer()->getName().":","",$this->system["MenberTima"]);
+							$newmember = str_replace(":".$event->getPlayer()->getName(),"",$this->system["MenberTima"]);
 							$this->system["MenberTima"] = $newmember;
 						}else{
 							if($member[substr_count($this->system["MenberTima"],":") - 1]){
