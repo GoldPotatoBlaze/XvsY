@@ -189,10 +189,10 @@ class XvsY extends PluginBase implements Listener{
 								$event->getDamager()->getPlayer()->sendPopup("§c同じチームです");
 								$event->setCancelled(true);
 							}
+						}else{
+							$event->getDamager()->getPlayer()->sendMessage("§c試合中です");
+							$event->setCancelled(true);
 						}
-					}else{
-						$event->getDamager()->getPlayer()->sendMessage("§c試合中です");
-						$event->setCancelled(true);
 					}
 				}
 			}
